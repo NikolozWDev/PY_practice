@@ -43,6 +43,68 @@ name = bool(name)
 print(name)
 
 
+# logical operators
+if True and True:
+    print('and operator')
+if True or False:
+    print('or operator')
+if not False:
+    print('not operator')
+
+# task
+user = {
+    "active": True,
+    "role": "user",  # შეიძლება იყოს "user" ან "admin"
+    "score": 30,
+    "verified": True
+}
+if user['active'] and user['verified'] and ( user['role'] == 'admin' or user['score'] > 25 ):
+    print('good')
+else:
+    print('bad')
+
+
+# string indexing
+some_text = 'raime textia es'
+print(some_text[-1])
+print(some_text[some_text.find(' '):some_text.rfind(' ')])
+
+
+# string methods
+text = 'nikoloz gigiashvili'
+print(len(text))
+print(text.find('l'))
+print(text.rfind('o'))
+print(text.capitalize())
+print(text.upper())
+print(text.upper().lower())
+print(text.isdigit())
+print(text.isalpha())
+print(text.count('i'))
+print(text.replace('i', 'a'))
+# task
+print(text.replace(' ', ''))
+# task
+name = input('Enter your name: ')
+if len(name) <= 12 and name.find(' ') == -1 and not name.isdigit():
+    print(f'correct name. {name}')
+else:
+    print(f'incorrect name. {name}')
+
+
+# conditional expression
+result = 'good' if 10 < 20 else 'bad'
+print(result)
+
+agee = 19
+agee_result = 'adult' if age >= 18 else 'child'
+print(agee_result)
+
+a = 6
+b = 8
+print(a if a > b else b)
+
+
 # if statements
 age = int(input('Enter your age: '))
 if age >= 18:
