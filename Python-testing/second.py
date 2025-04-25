@@ -55,14 +55,16 @@ while name == "":
 print(f'hello {name}')
 
 
-age = input('(to quit write q) tell us your age: ')
+age = input('( to quit write q ) tell us your age: ')
 if age == 'q':
     print('goodbye')
 else:
     while not age.isdigit() or int(age) < 0 or int(age) > 100:
-        if age == 'q':
+        while age == 'q':
             print('goodbye')
+            age = 's'
             break
+    if age != 's':
         if len(age) == 0:
             age = input('(to quit write q) tell us your age: ')
         else:
@@ -73,3 +75,34 @@ else:
         print('you are adult. you can join our community')
     else:
         print('you are not adult. you can not join our community')
+
+
+
+
+# compount interest calculator
+while True:
+    principal = input('Enter principal amount: ')
+    if principal == '' or float(principal) <= 0:
+        print('principal amount must be greater than 0')
+    else:
+        break
+num_principal = float(principal)
+
+while True:
+    rate = input('Enter interest rate: ')
+    if rate == '' or int(rate) <= 0:
+        print('interest rate must be greater than 0')
+    else:
+        break
+num_rate = int(rate)
+
+while True:
+    time = input('Enter time in years: ')
+    if time == '' or int(time) <= 0:
+        print('time must be greater than 0')
+    else:
+        break
+num_time = int(time)
+
+total = num_principal * pow((1 + (num_rate / 100)), num_time)
+print(f'Total amount after {num_time} years is: {total}')
