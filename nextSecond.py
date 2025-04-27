@@ -11,6 +11,37 @@ for x in phone_number:
     print(x)
 
 
+
+# cart task
+food = []
+price = 0
+
+while True:
+    foods = input('(to leave write q / Q) Enter food: ')
+    if foods.lower() == 'q':
+        break
+    elif foods == '':
+            foods = input('(to leave write q / Q) Enter food: ')
+            continue
+    else:
+        food.append(foods)
+        prices = input('Enter price: $')
+        if prices == '':
+            prices = input('Enter price: $')
+            continue
+        else:
+            price += float(prices)
+
+print('-----YOUT CART-----')
+i = 0
+while i < len(food):
+    print(f'{food}')
+    i += 1
+print(f'your total price is: ${price}')
+
+
+
+
 # lists []; sets {}; tuples ();
 list = ['apple', 'banana', 'orange']
 i = 0
