@@ -11,6 +11,15 @@ for x in phone_number:
     print(x)
 
 
+# lists []; sets {}; tuples ();
+list = ['apple', 'banana', 'orange']
+i = 0
+while i < len(list):
+    print(list[i])
+    i += 1
+list.append('kiwi')
+print(list.index('banana'))
+
 
 # rectangle
 rows = int(input('Enter number of rows: '))
