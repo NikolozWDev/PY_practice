@@ -12,6 +12,51 @@ for x in phone_number:
 
 
 
+# 2D collection
+server = ['server1', 'server2', 'server3']
+server_errors = ['404', '500', '403']
+server_status = ['ok', 'ok', 'ok']
+collection = [server, server_errors, server_status]
+print(collection[0][2], collection[1][2], collection[2][2])
+i = 0
+while i < len(collection):
+    print(' '.join(collection[i]))
+    i += 1
+
+
+# task calculator numbers
+calc_numbers = [
+    ['1', '2', '3'],
+    ['4', '5', '6'],
+    ['7', '8', '9'],
+    ['*', '0', '#']
+]
+i = 0
+while i < len(calc_numbers):
+    print(' '.join(calc_numbers[i]))
+    i += 1
+
+
+
+# dictionarys
+dictionary = {
+    'name': 'nikoloz',
+    'age': 15,
+    'genter': 'bot',
+    'height': 7.5,
+}
+dictionary.update({'genter': 'male'})
+dictionary.update({'country': 'Georgia'})
+print(dictionary.get('genter'))
+print(dictionary.get('country'))
+dictionary.pop('height')
+dictionary.popitem()
+print(dictionary.keys())
+print(dictionary.values())
+
+
+
+
 # cart task
 food = []
 price = 0
