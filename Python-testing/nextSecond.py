@@ -56,6 +56,10 @@ print(dictionary.values())
 
 
 
+# functions
+
+
+
 
 # cart task
 food = []
