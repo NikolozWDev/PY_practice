@@ -40,6 +40,50 @@ print(result)
 
 
 
+# iterables
+listing = ['first', 'second', 'third']
+for i in reversed(listing):
+    print(i, end=' ')
+
+
+dictionary = {
+    'sad1': 5,
+    'sad2': 'sadxar',
+    'sad3': 'vinxar'
+}
+for i, j in dictionary.items():
+    print(f'keys: {i} , values: {j}')
+
+
+# membership operators ( in, not in )
+select_name = input('guess the word: ')
+word = 'application'
+if select_name in word:
+    print(f'you guessed {select_name} word!')
+else:
+    print(f'{select_name} is not found')
+
+select_listo = input('write who is the student: ')
+listo = ['jabo', 'rea', 'kaka']
+if select_listo in listo:
+    print(f'{select_listo} is in listo')
+else:
+    print(f'{select_listo} is not in listo')
+
+select_di = input('Enter di: ')
+di = {
+    'kaki': 'sh',
+    'belia': 'melia',
+    'santa': 'kakombish'
+}
+if select_di in di.keys():
+    print(di.values())
+else:
+    print(di.keys())
+
+
+
+
 # while loop
 i = 1
 while i <= 10:

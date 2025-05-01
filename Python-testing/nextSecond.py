@@ -1,3 +1,4 @@
+import time
 # for loops
 for x in reversed(range(1, 11, 3)):
     print(x)
@@ -56,8 +57,66 @@ print(dictionary.values())
 
 
 
-# functions
+# *args && **kwargs
+def total_task(*args, **kwargs):
+    for i in args:
+        print(i, end=' ')
+    for j in kwargs.values():
+        print(j, end=' ')
 
+total_task('text1', 'text2', 3, kwaargs='kwargs1', kwaargsis='kwargs2', kwaaargis='kwargs3')
+
+
+
+# functions
+def servers(x):
+    print(f'This is {x}')
+
+servers('server1')
+
+def plus(x, y):
+    return x + y
+def minus(x, y):
+    return x - y
+print(plus(2, 5), minus(2, 5))
+
+names = input('Enter your full name: ')
+def names_fix(fix):
+    parts = fix.split()
+    if len(parts) > 2:
+        tool = parts[0].capitalize() + ' '
+        i = 1
+        while i < len(parts):
+            tool += f'{parts[i][0].upper()}. '
+            i += 1
+        return tool.strip()
+    return parts[0].capitalize() + ' ' + parts[1].capitalize()
+print(names_fix(names))
+
+
+# default arguments
+def ragaca(x=0, y=0):
+    return x + y
+print(ragaca())
+
+
+# task
+def timing(start, end):
+    i = end
+    while i > start:
+        print(f'{i}---{start}')
+        time.sleep(1)
+        if i == start:
+            break
+        i -= 1
+starting = int(input('Enter when start: '))
+ending = int(input('Enter when ending: '))
+timing(starting, ending)
+
+# keyword arguments
+def keyword(name, age, email, gender):
+    return f'{name} {age} {email} {gender}'
+print(keyword(name='nikoloz', age=15, email='gigiashvilinikoloz@gmail.com', gender='Male'))
 
 
 
@@ -114,7 +173,6 @@ while i < rows:
 
 
 # timer
-import time
 
 # time.sleep(3)
 # print('done')
