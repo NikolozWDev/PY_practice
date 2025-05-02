@@ -12,6 +12,33 @@ for x in phone_number:
     print(x)
 
 
+# import
+from second import mult
+print(mult(5, 10))
+
+
+
+# scope resolution
+def sc1(x):
+    x = 10
+    print(x)
+
+def sc2(x):
+    x = 20
+    print(x)
+
+# def sc1_and_sc2(x):
+    # x = 50
+    # def in_sc(x):
+    #     x = 100
+    #     print(x)
+    # in_sc()
+    # print(x)
+    
+# sc1_and_sc2()
+
+
+
 
 # 2D collection
 server = ['server1', 'server2', 'server3']

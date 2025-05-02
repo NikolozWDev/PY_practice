@@ -83,6 +83,44 @@ else:
 
 
 
+# list compherision
+doubles = [x * 2 for x in range(1, 11)]
+print(doubles)
+
+product_list = ['server1', 'server2', 'server3']
+fix_product_list = [pl.upper() for pl in product_list]
+print(fix_product_list)
+
+number_list = [234, 432, 743, 243, 743, 43, 76]
+selection_of_number_list = [num for num in number_list if num % 2 == 0]
+print(selection_of_number_list)
+
+
+# match-case statements
+def day_calc(day):
+    match day:
+        case 1:
+            return 10
+        case 2:
+            return 100
+        case 3:
+            return 1000
+        case 4:
+            return 10000
+        case 5:
+            return 100000
+        case 6:
+            return 1000000
+        case 7:
+            return 10000000
+        case _:
+            return 'Please enter 1-7'
+print(day_calc(5))
+
+# export
+def mult(x, y):
+    return x * y
+
 
 # while loop
 i = 1
