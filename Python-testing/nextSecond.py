@@ -36,7 +36,15 @@ def sc2(x):
     # print(x)
     
 # sc1_and_sc2()
-
+x = 0
+def scope_resolution():
+    x = 10
+    print(x)
+def scope_resolution2():
+    print(x)
+scope_resolution()
+scope_resolution2()
+print(x)
 
 
 
