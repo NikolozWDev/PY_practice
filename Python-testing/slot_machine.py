@@ -1,55 +1,48 @@
 import random
-def slots():
-    slot = ['🎰', '🍒', '🎲', '💎']
-    return slot
-
-def slot_random():
-    random_list = []
-    i = 0
-    while i < 3:
-        random_list.append(random.choice(slots()))
-        i += 1
-    return random_list
-
-def slot_row(bal):
-    slot = slot_random()
-    if slot[0] == slot[1] == slot[2]:
-        if slot[0] == '🎰':
-            bal = bal * 3
-        elif slot[0] == '🍒':
-            bal = bal * 4
-        elif slot[0] == '🎲':
-            bal = bal * 5
-        elif slot[0] == '💎':
-            bal = bal * 10
-        print('you win')
-    else:
-        print('you loose')
-    return bal
-
-
+import time
 
 def main():
-    print('--------------------------------')
-    print('Welcome to slot machine')
-    print('Symbols: 3x🎰   4x🍒   5x🎲   10x💎')
-    print('--------------------------------')
+    slot_icons = ['🎰', '🍒', '🎲', '💎']
     balance = 100
     is_running = True
+    print('************************************')
+    print('Welcome Slot Machine')
+    print('symbols: 2x🎰  3x🍒  4x🎲   0x💎')
+    print('************************************')
     while is_running:
-        bet = input('bet: $')
-        if not bet.isdigit():
+        slot_random = []
+        i = 0
+        while i < 3:
+            slot_random.append(random.choice(slot_icons))
+            i += 1
+        bet = input('place your bet amount: $')
+        if not bet.isdigit() or int(bet) > balance or int(bet) <= 0 or bet == '':
+            print('Invalid')
             continue
-        elif int(bet) > balance or int(bet) <= 0:
-            print('your bet is incorrect')
-            continue
+        print('spinning...')
+        time.sleep(1)
         bet = int(bet)
         balance -= bet
-        print(balance)
-        print('& & & & & & & & & & & &')
-        print(' | '.join(slot_random()))
-        print('& & & & & & & & & & & &')
-        slot_row(balance)
+        print(' | '.join(slot_random))
+        if slot_random[0] == slot_random[1] == slot_random[2]:
+            print('you win')
+            if slot_random[0] == '🎰':
+                balance += bet * 2
+            elif slot_random[0] == '🍒':
+                balance += bet * 3
+            elif slot_random[0] == '🎲':
+                balance += bet * 4
+            elif slot_random[0] == '💎':
+                balance += bet * 10
+            print(f'your balance: ${balance}')
+        else:
+            print('you lose')
+            print(f'your balance: ${balance}')
+        ask = input('do you want to play again (Y/N): ').upper()
+        if ask == 'Y':
+            continue
+        elif ask == 'N':
+            is_running = False
 
-# start
-main()
+
+print(main())
