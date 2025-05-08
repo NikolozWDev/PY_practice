@@ -214,3 +214,72 @@ class Car(MainLanguage):
 languages = [France(), Georgia(), Car()]
 for i in languages:
     print(f'Language: {i.speak()}')
+
+
+
+print('__________________________________')
+# static methods
+# class methods
+class Employee:
+    def __init__(self, name, position):
+        self.name = name
+        self.position = position
+    def get_info(self):
+        return f'{self.name} = {self.position}'
+    def is_valid(self):
+        valid = ['Math', 'Programming', 'Pythics']
+        return self.position in valid
+
+employee1 = Employee('Rico', 'Math')
+employee2 = Employee('Zuka', 'Director')
+
+
+print(employee1.get_info())
+print(employee1.is_valid())
+
+print(employee2.get_info())
+print(employee2.is_valid())
+
+
+
+print('__________________________________')
+# magic methods
+class Book:
+    def __init__(self, title, page):
+        self.title = title
+        self.page = page
+    def describe(self):
+        return f'title: {self.title}, pages: {self.page}'
+
+book1 = Book('Before death', 304)
+book2 = Book('Freedom', 430)
+
+
+print(book1.title == book2.title)
+print(book1.page < book2.page)
+print(book1.page + book2.page)
+
+
+
+print('__________________________________')
+# propery
+class RecTriangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    def _width(self):
+        if self.width <= 0:
+            return 'Error'
+        else:
+            return f'{self.width}cm'
+    def _height(self):
+        if self.height <= 0:
+            return 'Error'
+        else:
+            return f'{self.height}cm'
+
+rectriangle = RecTriangle(10, 24)
+
+
+print(rectriangle._width())
+print(rectriangle._height())
