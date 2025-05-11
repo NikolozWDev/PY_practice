@@ -57,3 +57,7 @@ with open(json_file, 'w') as file:
 with open(json_file, 'r') as file:
     content = json.load(file)
     print(content)
+
+# with open('Python-testing/ceazer_cypher.py', 'r') as file:
+#     content = file.read()
+#     print(content)
